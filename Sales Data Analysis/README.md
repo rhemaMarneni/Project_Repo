@@ -50,10 +50,9 @@ python main.py
 python -m pytest tests/test_analysis.py -v
 ```
 
-```
 ## Example Output
 
-```
+```bash
 ============== DATA SUMMARY ==============
 
 Total Sales: $10,032,628.85
