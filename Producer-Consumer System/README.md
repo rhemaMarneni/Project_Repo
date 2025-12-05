@@ -53,6 +53,61 @@ Example scenarios:
 - **Fast producer, slow consumer**: Producer fills queue, then blocks
 - **Slow producer, fast consumer**: Consumer waits for items
 
+## Terminal Output:
+```
+Scenario 1
+Producing item ---- 0
+Consumed item ---- 0
+Producing item ---- 1
+Consumed item ---- 1
+Producing item ---- 2
+Consumed item ---- 2
+Producing item ---- 3
+Producing item ---- 4
+Consumed item ---- 3
+Producing item ---- 5
+Consumed item ---- 4
+Producing item ---- 6
+Producing item ---- 7
+Consumed item ---- 5
+Producing item ---- 8
+Consumed item ---- 6
+Producing item ---- 9
+Producer finished, sending sentinel
+Queue is full, Producer is waiting for space. Current size: 3
+Consumed item ---- 7
+Consumed item ---- 8
+Consumed item ---- 9
+Consumer received sentinel, stopping
+
+Scenario 2
+Producing item ---- 0
+Queue is empty, Consumer is waiting for an item. Current size: 0
+Consumed item ---- 0
+Producing item ---- 1
+Producing item ---- 2
+Consumed item ---- 1
+Producing item ---- 3
+Producing item ---- 4
+Consumed item ---- 2
+Producing item ---- 5
+Producing item ---- 6
+Consumed item ---- 3
+Producing item ---- 7
+Producing item ---- 8
+Producing item ---- 9
+Queue is full, Producer is waiting for space. Current size: 5
+Consumed item ---- 4
+Producer finished, sending sentinel
+Queue is full, Producer is waiting for space. Current size: 5
+Consumed item ---- 5
+Consumed item ---- 6
+Consumed item ---- 7
+Consumed item ---- 8
+Consumed item ---- 9
+Consumer received sentinel, stopping
+```
+
 ## Testing
 
 To run all unit tests:
