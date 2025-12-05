@@ -26,7 +26,7 @@ Analyzing sales data using pandas and functional programming concepts including 
 - `sort_countries_by_avg(df)` - Sort countries by average sales per order in descending order
 - `sort_products_by_quantity(df)` - Sort products by total quantity ordered in descending order
 
-## Tools/Languages Used
+## Languages/Libraries Used
 
 - Python 3.7+
 - pandas
@@ -37,20 +37,19 @@ Analyzing sales data using pandas and functional programming concepts including 
 pip install pandas
 ```
 
-## Usage
-
-Run the main script to perform the analysis:
+## To run project
 
 ```bash
 python main.py
 ```
 
-## To Run Unit Tests
+## To Run All Unit Tests
 
 ```bash
 python -m pytest tests/test_analysis.py -v
 ```
 
+```
 ## Example Output
 
 Sales Data Analysis
@@ -136,3 +135,4 @@ Top 5 most ordered products by quantity:
   S18_4600: 1,031.00
   S700_4002: 1,029.00
   S12_4473: 1,024.00
+```
