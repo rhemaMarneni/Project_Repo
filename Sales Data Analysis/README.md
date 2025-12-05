@@ -3,6 +3,7 @@
 Analyzing sales data using pandas and functional programming concepts including lambda functions and stream operations.
 
 **Data Source:** https://www.kaggle.com/datasets/kyanyoga/sample-sales-data
+I chose this dataset because the data is representative of the common factors used for sales analysis.
 
 #### Aggregate Functions
 - `total_sales(df)` - Calculate the total sales across all orders
@@ -52,87 +53,131 @@ python -m pytest tests/test_analysis.py -v
 ```
 ## Example Output
 
-Sales Data Analysis
-===================
-Data Summary:
-Total SALES: 10,032,628.85
+```
+============== DATA SUMMARY ==============
+
+Total Sales: $10,032,628.85
 Total customers: 92
 Total orders: 307
-Total products: 109
-Average SALES per order line: 3,553.89
-Large orders: 1168
+Total products: 7
+Average Sales per order line: $3,553.89
+Large orders (above 75th percentile): 705
 
-Sales by country:
-  Australia: 630,623.10
-  Austria: 202,062.53
-  Belgium: 108,412.62
-  Canada: 224,078.56
-  Denmark: 245,637.15
-  Finland: 329,581.91
-  France: 1,110,916.52
-  Germany: 220,472.09
-  Ireland: 57,756.43
-  Italy: 374,674.31
-  Japan: 188,167.81
-  Norway: 307,463.70
-  Philippines: 94,015.73
-  Singapore: 288,488.41
-  Spain: 1,215,686.92
-  Sweden: 210,014.21
-  Switzerland: 117,713.56
-  UK: 478,880.46
-  USA: 3,627,982.83
+============== SALES ANALYSIS BY COUNTRY ==============
 
-Sales by product:
-  Classic Cars: 3,919,615.66
-  Motorcycles: 1,166,388.34
-  Planes: 975,003.57
-  Ships: 714,437.13
-  Trains: 226,243.47
-  Trucks and Buses: 1,127,789.84
-  Vintage Cars: 1,903,150.84
+
+Overall Sales:
+  Australia: $630,623.10
+  Austria: $202,062.53
+  Belgium: $108,412.62
+  Canada: $224,078.56
+  Denmark: $245,637.15
+  Finland: $329,581.91
+  France: $1,110,916.52
+  Germany: $220,472.09
+  Ireland: $57,756.43
+  Italy: $374,674.31
+  Japan: $188,167.81
+  Norway: $307,463.70
+  Philippines: $94,015.73
+  Singapore: $288,488.41
+  Spain: $1,215,686.92
+  Sweden: $210,014.21
+  Switzerland: $117,713.56
+  UK: $478,880.46
+  USA: $3,627,982.83
+
+Top 5 performing countries:
+  USA: $3,627,982.83
+  Spain: $1,215,686.92
+  France: $1,110,916.52
+  Australia: $630,623.10
+  UK: $478,880.46
+
+Bottom 5 performing countries:
+  Japan: $188,167.81
+  Switzerland: $117,713.56
+  Belgium: $108,412.62
+  Philippines: $94,015.73
+  Ireland: $57,756.43
+
+============== SALES ANALYSIS BY PRODUCTLINE ==============
+
+Product Category Sales:
+  Classic Cars: $3,919,615.66
+  Motorcycles: $1,166,388.34
+  Planes: $975,003.57
+  Ships: $714,437.13
+  Trains: $226,243.47
+  Trucks and Buses: $1,127,789.84
+  Vintage Cars: $1,903,150.84
+
+Quantities sold:
+  Classic Cars: $33,992.00
+  Vintage Cars: $21,069.00
+  Motorcycles: $11,663.00
+  Trucks and Buses: $10,777.00
+  Planes: $10,727.00
+  Ships: $8,127.00
+  Trains: $2,712.00
+
+Best Selling product:
+  Classic Cars: making $3,919,615.66 in sales
+
+Worst Selling product:
+  Trains: making $226,243.47 in sales
+
+============== YEARLY ANALYSIS ==============
 
 Sales by year:
-  2003: 3,516,979.54
-  2004: 4,724,162.60
-  2005: 1,791,486.71
+  2003: $3,516,979.54
+  2004: $4,724,162.60
+  2005: $1,791,486.71
 
-Top products by sales:
-  Classic Cars: 3,919,615.66
-  Vintage Cars: 1,903,150.84
-  Motorcycles: 1,166,388.34
-  Trucks and Buses: 1,127,789.84
-  Planes: 975,003.57
-  Ships: 714,437.13
-  Trains: 226,243.47
+Quarterly analysis for each year:
+YEAR_ID  QTR_ID
+2003     1          445094.69
+         2          562365.22
+         3          649514.54
+         4         1860005.09
+2004     1          833730.68
+         2          766260.73
+         3         1109396.27
+         4         2014774.92
+2005     1         1071992.36
+         2          719494.35
+Name: SALES, dtype: float64
 
-Filtering by status:
+Best quarter for each year:
+  2003: 4
+  2004: 4
+  2005: 1
+
+Worst quarter for each year:
+  2003: 1
+  2004: 2
+  2005: 2
+
+============== FILTERING BY STATUS ==============
+
   Shipped orders: 2617
   Cancelled orders: 60
   Total sales for shipped orders: 9,291,501.08
-  Total sales for cancelled orders: 194,487.48
+  Lost revenue from cancelled orders: 194,487.48
 
-Top 5 products by sales:
-  S18_3232: 288,245.42
-  S10_1949: 191,073.03
-  S10_4698: 170,401.07
-  S12_1108: 168,585.32
-  S18_2238: 154,623.95
+============== CUSTOMER LEVEL ANALYSIS ==============
 
-Best product:
-  S18_3232: 288,245.42
+Most frequent customers:
+  AV Stores, Co.: $157,807.81
+  Alpha Cognac: $70,488.44
+  Amica Models & Co.: $94,117.26
+  Anna's Decorations, Ltd: $153,996.13
+  Atelier graphique: $24,179.96
 
-Top 5 countries by average sales:
-  Denmark: 3,899.00
-  Switzerland: 3,797.21
-  Sweden: 3,684.46
-  Austria: 3,673.86
-  Singapore: 3,651.75
-
-Top 5 most ordered products by quantity:
-  S18_3232: 1,774.00
-  S24_3856: 1,052.00
-  S18_4600: 1,031.00
-  S700_4002: 1,029.00
-  S12_4473: 1,024.00
+Least frequent customers:
+  Vida Sport, Ltd: $117,713.56
+  Vitachrome Inc.: $88,041.26
+  Volvo Model Replicas, Co: $75,754.88
+  West Coast Collectables Co.: $46,084.64
+  giftsbymail.co.uk: $78,240.84
 ```
