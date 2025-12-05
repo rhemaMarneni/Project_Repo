@@ -10,22 +10,28 @@ I chose this dataset because the data is representative of the common factors us
 - `sales_by_country(df)` - Calculate total sales grouped by country
 - `sales_by_product(df)` - Calculate total sales grouped by product line
 - `sales_by_year(df)` - Calculate total sales grouped by year
+- `sales_by_year_and_quarter(df)` - Calculate total sales grouped by year and quarter
+- `sales_by_customer(df)` - Calculate total sales grouped by customer
 - `average_sales_per_order_line(df)` - Calculate the average sales amount per order line
-- `top_product_by_sales(df)` - Get the top 10 product lines by total sales
 - `large_orders(df, threshold)` - Filter orders where sales exceed the specified threshold
 
 #### Counting Functions
 - `total_orders(df)` - Count the total number of unique orders
 - `total_customers(df)` - Count the total number of unique customers
 - `total_products(df)` - Count the total number of unique products
+- `total_orders_per_customer(df)` - Calculate total orders grouped by customer
 
 #### Filtering Functions
 - `filter_by_status(df, status)` - Filter orders by their status (e.g., 'Shipped', 'Cancelled')
 
 #### Sorting Functions
 - `sort_products_by_sales(df)` - Sort products by total sales in descending order
-- `sort_countries_by_avg(df)` - Sort countries by average sales per order in descending order
+- `sort_countries_by_sales(df)` - Sort countries by total sales in descending order
 - `sort_products_by_quantity(df)` - Sort products by total quantity ordered in descending order
+
+#### Time-based Analysis Functions
+- `best_quarter_each_year(df)` - Calculate the best quarter for each year
+- `worst_quarter_each_year(df)` - Calculate the worst quarter for each year
 
 ## Languages/Libraries Used
 
